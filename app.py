@@ -73,11 +73,6 @@ def create_db(texts, embeddings):
         create_faiss_db(texts, embeddings)
 
 
-def get_llm_model():
-    log(f'Setting Google "text-bison@001" as Large Language Model')
-    return VertexAI(model_name = 'text-bison@001', max_output_tokens = 256, temperature = 0.1, top_p = 0.8, top_k = 40, verbose = True,)
-
-
 def get_chroma_retriever(embeddings):
     db = Chroma(collection_name="langchain", persist_directory=VECTOR_DB_LOC, embedding_function=embeddings)
     retriever = db.as_retriever(
@@ -100,6 +95,11 @@ def get_retriever(embeddings):
         return get_faiss_retriever(embeddings)
     else:
         return get_chroma_retriever(embeddings)
+
+
+def get_llm_model():
+    log(f'Setting Google "text-bison@001" as Large Language Model')
+    return VertexAI(model_name = 'text-bison@001', max_output_tokens = 256, temperature = 0.1, top_p = 0.8, top_k = 40, verbose = True,)
 
 
 def set_custom_prompt():
