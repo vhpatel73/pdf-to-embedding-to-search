@@ -1,0 +1,6 @@
+langchain==0.0.262
+pypdf==3.15.0
+google-cloud-aiplatform==1.30.0
+sentence_transformers==2.2.2
+chromadb==0.4.5
+faiss-cpu==1.7.4
