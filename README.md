@@ -30,7 +30,7 @@ mkdir input
 mkdir output
 ```
 
-### Configure & Project 
+### Configuration 
 
 - Copy PDF files to be processed in `input` folder
 - Configure appropriate values as desire in `app.cfg`
