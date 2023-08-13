@@ -161,3 +161,4 @@ cython_debug/
 
 output/*
 .chainlit/.langchain.db
+.DS_Store
