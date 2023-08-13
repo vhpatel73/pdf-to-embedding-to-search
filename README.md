@@ -4,6 +4,18 @@ This project converts a set of PDFs into text chunks, converts them into various
 
 The primary goal of this project is to make it easy to try various embedding models and vector databases for comparative study. Use [app.cfg](app.cfg) configuration file to switch embedding models, vector database, and llm. 
 
+## Supported Stack
+
+* Supported Text Embedding Models
+    - GCP Vertex AI PaLM (textembedding-gecko)
+    - sentence-transformers/all-MiniLM-L6-v2
+    - sentence-transformers/all-mpnet-base-v2
+    - sentence-transformers/multi-qa-mpnet-base-dot-v1
+* Vector Store
+    - Chroma
+    - FAISS
+* LLM
+    - GCP Vertex AI PaLM (text-bison)
 
 ### Setup Project Workspace
 
@@ -29,6 +41,13 @@ Create input and output folders
 mkdir input
 mkdir output
 ```
+
+To use Vertex AI PaLM you must have the google-cloud-aiplatform Python package installed and either:
+
+* Have credentials configured for your environment (gcloud, workload identity, etc...)
+* Store the path to a service account JSON file as the GOOGLE_APPLICATION_CREDENTIALS environment variable
+
+For detail information, see: [Setup GCP](https://googleapis.dev/python/google-auth/latest/reference/google.auth.html#module-google.auth) & [Google auth](https://googleapis.dev/python/google-auth/latest/reference/google.auth.html#module-google.auth)
 
 ### Configuration 
 
