@@ -1,0 +1,65 @@
+A 0 ['textembedding-gecko','Chroma','vertexllm'],
+A 1 ['textembedding-gecko','FAISS','vertexllm'],
+A 2 ['sentence-transformers/all-MiniLM-L6-v2','Chroma','vertexllm'],
+A 3 ['sentence-transformers/all-MiniLM-L6-v2','FAISS','vertexllm'],
+A 4 ['sentence-transformers/all-mpnet-base-v2','Chroma','vertexllm'],
+
+
+(Q  )   : What services AAA provides?
+(A 0)   : AAA clubs primarily provide emergency road services to its members.
+(A 1)   : AAA clubs primarily provide emergency road services to its members. These services, which include towing,
+lockouts, winching, tire changes, automotive first aid, battery replacement, and others, are handled by private
+local towing companies contracted by a state AAA club.
+(A 2)   : AAA provides a variety of services, including roadside assistance, travel planning, and insurance.
+(A 3)   : AAA clubs primarily provide emergency road services to its members.
+(A 4)   : AAA provides emergency road services, including towing, lockouts, winching, tire changes, automotive first aid, battery replacement, and others.
+
+(Q  )   : Where is AAA headquaters located
+(A 0)   : The AAA headquarters are located in Heathrow, Florida.
+(A 1)   : The AAA's national headquarters are in Heathrow, Florida.
+(A 2)   : AAA's headquarters are located in Heathrow, London.
+(A 3)   : The national headquarters of the AAA are located in Heathrow, Florida.
+(A 4)   : The headquarters of AAA is located in Wilmington, Delaware.
+
+(Q  )   : When US stamps issued to promote the school safety patrol?
+(A 0)   : The AAA 50th Anniversary US stamp, issued in 1952, promotes the School Safety Patrol.
+(A 1)   : The AAA 50th Anniversary US stamp, issued in 1952, promotes the School Safety Patrol.
+(A 2)   : 1936
+(A 3)   : The answer is not present in the passage.
+(A 4)   : 1952
+
+(Q  )   : What are the initiates AAA took on by engaging with US Goverment?
+(A 0)   : AAA helped to shape two pieces of landmark legislation: the Transportation Equity Act for the 21st Century (TEA-21) in 1998 and the Aviation Investment and Reform Act for the 21st Century (AIR-21) in 2000.
+(A 1)   : AAA helped to shape two pieces of landmark legislation: the Transportation Equity Act for the 21st Century (TEA-21) in 1998 and the Aviation Investment and Reform Act for the 21st Century (AIR-21) in 2000.
+(A 2)   : AAA took on the initiatives of the US Government to provide financial assistance to farmers.
+(A 3)   : AAA has also provided services to the U.S. gove rnment in times of war. During the 1940s , AAA offered its
+services to the Advisory Commission of the Counc il of National Defense[16] in anticipation of becoming involved
+in World War II. AAA President Thomas P. Henry was appointed consultant in the transportation unit of the
+Defense Counc il, and AAA pledged resources, including highway information, to national defense planning efforts
+as it had dur ing W orld War I.[17]
+(A 4)   : AAA has also provided services to the U.S. government in times of war. During the 1940s , AAA offered its
+services to the Advisory Commission of the Counc il of National Defense[16] in anticipation of becoming involved
+in World War II. AAA President Thomas P. Henry was appointed consultant in the transportation unit of the
+Defense Counc il, and AAA pledged resources, including highway information, to national defense planning efforts
+as it had dur ing W orld War I.[17]
+
+(Q  )   : What is Sportsmanlike driving?
+(A 0)   : Sportsmanlike driving is a program for high schools that was published by AAA in 1935.
+(A 1)   : Sportsmanlike driving is a program for high schools that teaches students how to drive safely.
+(A 2)   : Sportsmanlike driving is a term used to describe driving that is safe, courteous, and considerate of other drivers.
+(A 3)   : Sportsmanlike driving is a program for high schools that was published by AAA in 1935.
+(A 4)   : Sportsmanlike driving is a program for high schools that was published by AAA in 1935.
+
+(Q  )   : What is Trip Tik?
+(A 0)   : TripTik is a paper-based trip planning tool produced by AAA.
+(A 1)   : TripTik is a paper-based trip planning tool produced by AAA.
+(A 2)   : Trip Tik is a travel planning app.
+(A 3)   : TripTik is a paper-based trip planning tool produced by AAA.
+(A 4)   : TripTik is AAA's travel planning guide and online travel planner.
+
+(Q  )   : Name few regulatory acts where AAA played significant role.
+(A 0)   : 
+(A 1)   : 
+(A 2)   : The National Motor Vehicle Traffic Act of 1938
+(A 3)   : AAA testified before Congress and the Federal Motor Carrier Safety Administration, on proposed hours-of-service regulations for commercial truck drivers
+(A 4)   : The AAA has weighed in over the years on numerous issues that affect motorists.
