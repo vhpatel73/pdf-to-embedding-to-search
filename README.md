@@ -4,30 +4,30 @@ This project implements the **Document Embedding Search** pattern for searching 
 
 The steps followed to perform Document Embedding Search are:
 
-1. Extract text from PDF document(s) - This step is implemented using langchain's document loader and PyPDF libraries.
+1. **Extract text from PDF document(s)** - This step is implemented using langchain's document loader and PyPDF libraries.
 
-2. Split documents into text chunks - This next step is to split documents into manageable text chunks. It is accomplished by using langchain's `RecursiveCharacterTextSplitter`. 
+2. **Split documents into text chunks** - This next step is to split documents into manageable text chunks. It is accomplished by using langchain's `RecursiveCharacterTextSplitter`. 
 
-3. Create document embeddings - The third step is to create embeddings for each chunk. Few options are implemented for these steps. The first option is to use GCP Vertex AI embedding. The second option implemented here uses the huggingface embedding library to allow the number of opensource embedding models (i.e. all-MiniLM-L6-v2, all-mpnet-base-v2, multi-qa-mpnet-base-dot-v1, etc)
+3. **Create document embeddings** - The third step is to create embeddings for each chunk. Few options are implemented for these steps. The first option is to use GCP Vertex AI embedding. The second option implemented here uses the huggingface embedding library to allow the number of opensource embedding models (i.e. [all-MiniLM-L6-v2](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2), [all-mpnet-base-v2](https://huggingface.co/sentence-transformers/all-mpnet-base-v2), [multi-qa-mpnet-base-dot-v1](https://huggingface.co/sentence-transformers/multi-qa-mpnet-base-dot-v1), etc)
 
-4. Save and index embeddings - This step uses a couple of open-source Vector Stores to save and index embeddings. Chroma and FAISS are supported in this implementation.
+4. **Save and index embeddings** - This step uses a couple of open-source Vector Stores to save and index embeddings. [Chroma](https://github.com/chroma-core/chroma) and [FAISS](https://ai.meta.com/tools/faiss/) are supported in this implementation.
 
-5. Search the embeddings - This step is to search the embeddings for the search query and use LLM to craft the result. GCP Vertex AI PaLM (text-bison) is used for this step. 
+5. **Search the embeddings** - This step is to search the embeddings for the search query and use LLM to craft the result. [GCP Vertex AI PaLM](https://cloud.google.com/blog/products/ai-machine-learning/generative-ai-applications-with-vertex-ai-palm-2-models-and-langchain) is used for this step. 
 
 Overall, **Document Embedding Search** is a powerful technique for searching PDF documents to find relevant information to search query even if the query does not contain any keywords that are found in the document. This approach is scalable but requires the right combination of embedding, similarity search technique, and a large language model. The goal of this project is to make it easy to try various embedding models and vector stores for comparative study. The choice of embedding model and vector stores are externalized in [app.cfg](app.cfg) configuration file to make it easy to try multiple permutations.  
 
 ## Supported Stack
 
 * Supported Text Embedding Models
-    - GCP Vertex AI PaLM (textembedding-gecko)
-    - sentence-transformers/all-MiniLM-L6-v2
-    - sentence-transformers/all-mpnet-base-v2
-    - sentence-transformers/multi-qa-mpnet-base-dot-v1
+    - [GCP Vertex AI PaLM (textembedding-gecko)](https://cloud.google.com/blog/products/ai-machine-learning/generative-ai-applications-with-vertex-ai-palm-2-models-and-langchain) 
+    - [sentence-transformers/all-MiniLM-L6-v2](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2)
+    - [sentence-transformers/all-mpnet-base-v2](https://huggingface.co/sentence-transformers/all-mpnet-base-v2)
+    - [sentence-transformers/multi-qa-mpnet-base-dot-v1](https://huggingface.co/sentence-transformers/multi-qa-mpnet-base-dot-v1)
 * Vector Store
-    - Chroma
-    - FAISS
+    - [Chroma](https://github.com/chroma-core/chroma)
+    - [FAISS](https://ai.meta.com/tools/faiss/)
 * LLM
-    - GCP Vertex AI PaLM (text-bison)
+    - [GCP Vertex AI PaLM (text-bison)](https://cloud.google.com/blog/products/ai-machine-learning/generative-ai-applications-with-vertex-ai-palm-2-models-and-langchain)
 
 ### Setup Project Workspace
 
