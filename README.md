@@ -1,8 +1,20 @@
 # Q&A with PDF document(s)
 
-This project converts a set of PDFs into text chunks, converts them into various embedding models, stores and indexes them with various vector databases, and leverages Vertex LLM to power semantic search. This project is useful for anyone who wants to create a semantic search engine for PDF documents.
+This project implements the **Document Embedding Search** pattern for searching PDF documents. The technique uses a combination of embedding and LLM. Embedding is a process of converting text into a vector representation that captures the meaning of the text. LLM is a large language model that can be used to understand the meaning of text.
 
-The primary goal of this project is to make it easy to try various embedding models and vector databases for comparative study. Use [app.cfg](app.cfg) configuration file to switch embedding models, vector database, and llm. 
+The steps followed to perform Document Embedding Search are:
+
+1. Extract text from PDF document(s) - This step is implemented using langchain's document loader and PyPDF libraries.
+
+2. Split documents into text chunks - This next step is to split documents into manageable text chunks. It is accomplished by using langchain's `RecursiveCharacterTextSplitter`. 
+
+3. Create document embeddings - The third step is to create embeddings for each chunk. Few options are implemented for these steps. The first option is to use GCP Vertex AI embedding. The second option implemented here uses the huggingface embedding library to allow the number of opensource embedding models (i.e. all-MiniLM-L6-v2, all-mpnet-base-v2, multi-qa-mpnet-base-dot-v1, etc)
+
+4. Save and index embeddings - This step uses a couple of open-source Vector Stores to save and index embeddings. Chroma and FAISS are supported in this implementation.
+
+5. Search the embeddings - This step is to search the embeddings for the search query and use LLM to craft the result. GCP Vertex AI PaLM (text-bison) is used for this step. 
+
+Overall, **Document Embedding Search** is a powerful technique for searching PDF documents to find relevant information to search query even if the query does not contain any keywords that are found in the document. This approach is scalable but requires the right combination of embedding, similarity search technique, and a large language model. The goal of this project is to make it easy to try various embedding models and vector stores for comparative study. The choice of embedding model and vector stores are externalized in [app.cfg](app.cfg) configuration file to make it easy to try multiple permutations.  
 
 ## Supported Stack
 
