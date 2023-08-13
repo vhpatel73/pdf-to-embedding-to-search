@@ -120,7 +120,6 @@ def retrievalQA(llm,chain_type,retriever):
 
 
 def getAnswer(retrievalQA, question):
-    log(f'Processing prompt ... ... ... \n')
     return retrievalQA({"query": question})    
 
 
