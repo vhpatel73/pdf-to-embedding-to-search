@@ -80,3 +80,13 @@ For detail information, see: [Setup GCP](https://googleapis.dev/python/google-au
 * In `chatbot.py`, configure `settings` variable with supported models available in your vector stores.
 * To run - `chainlit run chatbot.py`
 
+## References
+
+* Retrieval Augmented Generation : [Ref1](https://arxiv.org/abs/2005.11401) - [Ref2](https://huggingface.co/docs/transformers/model_doc/rag)
+* GCP Vertex AI PaLM (textembedding-gecko) : [Ref](https://cloud.google.com/blog/products/ai-machine-learning/generative-ai-applications-with-vertex-ai-palm-2-models-and-langchain) 
+* sentence-transformers/all-MiniLM-L6-v2 : [Ref](https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2)
+* sentence-transformers/all-mpnet-base-v2 : [Ref](https://huggingface.co/sentence-transformers/all-mpnet-base-v2)
+* sentence-transformers/multi-qa-mpnet-base-dot-v1 : [Ref](https://huggingface.co/sentence-transformers/multi-qa-mpnet-base-dot-v1)
+* Chroma : [Ref](https://github.com/chroma-core/chroma)
+* FAISS : [Ref](https://ai.meta.com/tools/faiss/)
+
