@@ -1,7 +1,7 @@
 '''
 
 Run set of questions against multiple embedding/llm models.
-This test program assumes that vector store for each combinations listed in 'testcases' are created.
+This test program assumes that vector store for each combinations listed in 'test_config' are created.
 
 '''
 import app
@@ -17,7 +17,7 @@ questions = [
     "Name few regulatory acts where AAA played significant role."
 ]
 
-testcases = [
+test_config = [
     ['textembedding-gecko','Chroma','vertexllm'],
     ['textembedding-gecko','FAISS','vertexllm'],
     ['sentence-transformers/all-MiniLM-L6-v2','Chroma','vertexllm'],
@@ -26,7 +26,7 @@ testcases = [
 ]
 resultsets = []
 
-for testno, testcase in enumerate(testcases):
+for testno, testcase in enumerate(test_config):
     app.EMBEDDING = testcase[0]
     app.VECTOR_DB = testcase[1]
     app.LLM = testcase[2]
@@ -46,7 +46,7 @@ for testno, testcase in enumerate(testcases):
         resultset.append(result["result"])
     resultsets.append(resultset)
 
-total_testcases = len(testcases)
+total_testcases = len(test_config)
 total_questions = len(questions)
 
 # Display Results

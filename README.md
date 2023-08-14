@@ -1,8 +1,8 @@
 # Q&A with PDF document(s)
 
-This project implements the **Document Embedding Search** pattern for searching PDF documents. The technique uses a combination of embedding and LLM. Embedding is a process of converting text into a vector representation that captures the meaning of the text. LLM is a large language model that can be used to understand the meaning of text.
+This project implements the **Retrieval Augmented Generation** pattern for searching proprietary knowledgebase. The technique uses a combination of embedding technique and pre-trained LLM. Embedding is a process of converting text into a vector representation that captures the meaning of the text. LLM is a large language model that can be used to understand the meaning of text.
 
-The steps followed to perform Document Embedding Search are:
+The steps followed to perform RAG are:
 
 1. **Extract text from PDF document(s)** - This step is implemented using langchain's document loader and PyPDF libraries.
 
@@ -14,7 +14,7 @@ The steps followed to perform Document Embedding Search are:
 
 5. **Search the embeddings** - This step is to search the embeddings for the search query and use LLM to craft the result. [GCP Vertex AI PaLM](https://cloud.google.com/blog/products/ai-machine-learning/generative-ai-applications-with-vertex-ai-palm-2-models-and-langchain) is used for this step. 
 
-Overall, **Document Embedding Search** is a powerful technique for searching PDF documents to find relevant information to search query even if the query does not contain any keywords that are found in the document. This approach is scalable but requires the right combination of embedding, similarity search technique, and a large language model. The goal of this project is to make it easy to try various embedding models and vector stores for comparative study. The choice of embedding model and vector stores are externalized in [app.cfg](app.cfg) configuration file to make it easy to try multiple permutations.  
+Overall, **Retrieval Augmented Generation** is a powerful technique for searching proprietary knowledgebase to find relevant information to search query even if the query does not contain any keywords that are found in the document. This approach is scalable but requires the right combination of embedding, similarity search technique, and a large language model. The goal of this project is to make it easy to try various embedding models and vector stores for comparative study. The choice of embedding model and vector stores are externalized in [app.cfg](app.cfg) configuration file to make it easy to try multiple permutations.  
 
 ## Supported Stack
 
@@ -64,6 +64,19 @@ For detail information, see: [Setup GCP](https://googleapis.dev/python/google-au
 ### Configuration 
 
 - Copy PDF files to be processed in `input` folder
-- Configure appropriate values as desire in `app.cfg`
+- Configure appropriate values as desire in `app.cfg`. It is recommended to run this program with different combination of embeddding models and vector stores in `app.cfg` while keeping `reuse_index = false`. 
 - To run : `python app.py`
+
+### Test
+
+* After generating vector stores,
+    - Configure `questions` and `testcases` in `test/bulktest.py`.
+    - Run `python test/bulktest.py`
+    - Record and score the results
+
+### UI - Portal
+
+* UI support is added using `Chainlit`. 
+* In `chatbot.py`, configure `settings` variable with supported models available in your vector stores.
+* To run - `chainlit run chatbot.py`
 
